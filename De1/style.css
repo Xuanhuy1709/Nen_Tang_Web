@@ -20,11 +20,7 @@ body {
   margin: 32px auto 24px auto;
 }
 
-.navbar-left {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
+/*  */
 .navbar-logo {
   font-weight: bold;
   font-size: 22px;
@@ -145,95 +141,19 @@ body {
   background: #f2f2f2;
   font-weight: bold;
 }
-.employee-table tbody tr:nth-child(odd) {
-  background: #fcfcfc;
-}
-.employee-table tbody tr:hover {
-  background: #f5f5f5;
-}
-.employee-table th:first-child,
-.employee-table td:first-child {
-  width: 60px;
-  text-align: center;
-}
-.employee-table th:last-child,
-.employee-table td:last-child {
-  width: 100px;
-  text-align: center;
-}
-.employee-table td a {
-  display: inline-block;
-  margin: 0 2px;
-  font-weight: bold;
-  text-decoration: none;
-  vertical-align: middle;
-}
 .employee-table .edit {
   color: #FFC107;
 }
 .employee-table .delete {
   color: #F44336;
 }
-.material-icons {
-  font-size: 22px;
-  vertical-align: middle;
-}
-
-/* Custom Checkbox */
-.custom-checkbox {
-  position: relative;
-  display: inline-block;
-  height: 18px;
-  width: 18px;
-}
-.custom-checkbox input[type="checkbox"] {
-  opacity: 0;
-  width: 18px;
-  height: 18px;
-  margin: 0;
-  position: absolute;
-  left: 0; top: 0;
-  z-index: 2;
-  cursor: pointer;
-}
-.custom-checkbox label {
-  position: absolute;
-  left: 0; top: 0;
-  width: 18px;
-  height: 18px;
-  border: 1px solid #bbb;
-  border-radius: 2px;
-  background: #fff;
-  cursor: pointer;
-  transition: border-color 0.1s;
-}
-.custom-checkbox input[type="checkbox"]:checked + label {
-  background: #03A9F4;
-  border-color: #03A9F4;
-}
-.custom-checkbox input[type="checkbox"]:checked + label:after {
-  content: "";
-  position: absolute;
-  left: 5px;
-  top: 2px;
-  width: 6px;
-  height: 11px;
-  border: solid #fff;
-  border-width: 0 3px 3px 0;
-  transform: rotate(45deg);
-}
-
 .clearfix {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 14px;
 }
-.hint-text {
-  font-size: 13px;
-  margin-top: 7px;
-  color: #888;
-}
+/*  */
 .pagination {
   display: flex;
   gap: 3px;
