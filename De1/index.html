@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Manage Employees</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-left">
+      <span class="navbar-logo">TLU</span>
+      <span class="navbar-link navbar-home">Home</span>
+      <span class="navbar-link navbar-active">Employees</span>
+    </div>
+    <form class="search-form" onsubmit="return false;">
+      <input type="search" placeholder="Search" class="search-input">
+      <button class="search-btn">Search</button>
+    </form>
+  </div>
+  <div class="center-box">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="title-left">
+          <h2>Manage <b>Employees</b></h2>
+        </div>
+        <div class="title-right">
+          <button class="btn btn-danger">
+            <span class="material-icons">&#xE15C;</span>
+            <span>Delete</span>
+          </button>
+          <button class="btn btn-success" onclick="openModal('addEmployeeModal')">
+            <span class="material-icons">&#xE147;</span>
+            <span>Add New Employee</span>
+          </button>
+        </div>
+      </div>
+      <table class="employee-table">
+        <thead>
+          <tr>
+            <th><span class="custom-checkbox"><input type="checkbox" id="selectAll"><label for="selectAll"></label></span></th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="custom-checkbox"><input type="checkbox" id="c1"><label for="c1"></label></span></td>
+            <td>Thomas Hardy</td>
+            <td>thomashardy@mail.com</td>
+            <td>89 Chiaroscuro Rd, Portland, USA</td>
+            <td>(171) 555-2222</td>
+            <td>
+              <a class="edit" onclick="openModal('addEmployeeModal')" title="Edit"><span class="material-icons">&#xE254;</span></a>
+              <a class="delete" title="Delete"><span class="material-icons">&#xE872;</span></a>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="custom-checkbox"><input type="checkbox" id="c2"><label for="c2"></label></span></td>
+            <td>Dominique Perrier</td>
+            <td>dominiqueperrier@mail.com</td>
+            <td>Obere Str. 57, Berlin, Germany</td>
+            <td>(313) 555-5735</td>
+            <td>
+              <a class="edit" onclick="openModal('addEmployeeModal')" title="Edit"><span class="material-icons">&#xE254;</span></a>
+              <a class="delete" title="Delete"><span class="material-icons">&#xE872;</span></a>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="custom-checkbox"><input type="checkbox" id="c3"><label for="c3"></label></span></td>
+            <td>Maria Anders</td>
+            <td>mariaanders@mail.com</td>
+            <td>25, rue Lauriston, Paris, France</td>
+            <td>(503) 555-9931</td>
+            <td>
+              <a class="edit" onclick="openModal('addEmployeeModal')" title="Edit"><span class="material-icons">&#xE254;</span></a>
+              <a class="delete" title="Delete"><span class="material-icons">&#xE872;</span></a>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="custom-checkbox"><input type="checkbox" id="c4"><label for="c4"></label></span></td>
+            <td>Fran Wilson</td>
+            <td>franwilson@mail.com</td>
+            <td>C/ Araquil, 67, Madrid, Spain</td>
+            <td>(204) 619-5731</td>
+            <td>
+              <a class="edit" onclick="openModal('addEmployeeModal')" title="Edit"><span class="material-icons">&#xE254;</span></a>
+              <a class="delete" title="Delete"><span class="material-icons">&#xE872;</span></a>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="custom-checkbox"><input type="checkbox" id="c5"><label for="c5"></label></span></td>
+            <td>Martin Blank</td>
+            <td>martinblank@mail.com</td>
+            <td>Via Monte Bianco 34, Turin, Italy</td>
+            <td>(480) 631-2097</td>
+            <td>
+              <a class="edit" onclick="openModal('addEmployeeModal')" title="Edit"><span class="material-icons">&#xE254;</span></a>
+              <a class="delete" title="Delete"><span class="material-icons">&#xE872;</span></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="clearfix">
+        <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+        <ul class="pagination">
+          <li class="disabled"><a href="#">Previous</a></li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li class="active"><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#">Next</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="addEmployeeModal" class="modal">
+    <div class="modal-content">
+      <form id="addForm">
+        <div class="modal-header">
+          <h4 class="modal-title">Add Employee</h4>
+          <span class="close" onclick="closeModal('addEmployeeModal')">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" id="nameInput" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="emailInput" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Address</label>
+            <textarea id="addressInput" class="form-control"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Phone</label>
+            <input type="text" id="phoneInput" class="form-control">
+          </div>
+          <div id="errorMessage" class="text-danger font-weight-bold mt-2"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeModal('addEmployeeModal')">Cancel</button>
+          <button type="submit" class="btn btn-success">Add</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "block";
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+      document.getElementById("addForm").reset();
+      document.getElementById("errorMessage").innerText = "";
+    }
+    window.onclick = function(event) {
+      var modal = document.getElementById("addEmployeeModal");
+      if (event.target === modal) modal.style.display = "none";
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("addForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const name = document.getElementById("nameInput").value.trim();
+        const email = document.getElementById("emailInput").value.trim();
+        const address = document.getElementById("addressInput").value.trim();
+        const phone = document.getElementById("phoneInput").value.trim();
+        const errorDiv = document.getElementById("errorMessage");
+        errorDiv.innerText = "";
+        if (!name || !email || !address || !phone) {
+          errorDiv.innerText = "⚠ Please do not leave any field empty.";
+          return;
+        }
+        const phoneRegex = /^0\d{9}$/;
+        if (!phoneRegex.test(phone)) {
+          errorDiv.innerText = "⚠ Phone number must be exactly 10 digits and start with 0.";
+          return;
+        }
+        closeModal('addEmployeeModal');
+        document.getElementById("addForm").reset();
+      });
+    });
+  </script>
+</body>
+</html>
