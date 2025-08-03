@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Manage Employees</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-left">
+      <span class="navbar-logo">TLU</span>
+      <span class="navbar-link navbar-home">Home</span>
+      <span class="navbar-link navbar-active">Employees</span>
+    </div>
+    <form class="search-form" onsubmit="return false;">
+      <input type="search" placeholder="Search" class="search-input">
+      <button class="search-btn">Search</button>
+    </form>
+  </div>
+
+  <div class="center-box">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="title-left">
+          <h2>Manage <b>Employees</b></h2>
+        </div>
+        <div class="title-right">
+          <button class="btn btn-danger">
+            <span class="material-icons">&#xE15C;</span>
+            <span>Delete</span>
+          </button>
+          <button class="btn btn-success btn-add">
+            <span class="material-icons">&#xE147;</span>
+            <span>Add New Employee</span>
+          </button>
+        </div>
+      </div>
+      <table class="employee-table">
+        <thead>
+          <tr>
+            <th><span class="custom-checkbox"><input type="checkbox" id="selectAll"><label for="selectAll"></label></span></th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Dữ liệu cũ giữ nguyên -->
+          <tr>
+            <td><span class="custom-checkbox"><input type="checkbox" id="c1"><label for="c1"></label></span></td>
+            <td>Thomas Hardy</td>
+            <td>thomashardy@mail.com</td>
+            <td>89 Chiaroscuro Rd, Portland, USA</td>
+            <td>(171) 555-2222</td>
+            <td>
+              <a class="edit btn-add" title="Edit"><span class="material-icons">&#xE254;</span></a>
+              <a class="delete" title="Delete"><span class="material-icons">&#xE872;</span></a>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="custom-checkbox"><input type="checkbox" id="c2"><label for="c2"></label></span></td>
+            <td>Dominique Perrier</td>
+            <td>dominiqueperrier@mail.com</td>
+            <td>Obere Str. 57, Berlin, Germany</td>
+            <td>(313) 555-5735</td>
+            <td>
+              <a class="edit btn-add" title="Edit"><span class="material-icons">&#xE254;</span></a>
+              <a class="delete" title="Delete"><span class="material-icons">&#xE872;</span></a>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="custom-checkbox"><input type="checkbox" id="c3"><label for="c3"></label></span></td>
+            <td>Maria Anders</td>
+            <td>mariaanders@mail.com</td>
+            <td>25, rue Lauriston, Paris, France</td>
+            <td>(503) 555-9931</td>
+            <td>
+              <a class="edit btn-add" title="Edit"><span class="material-icons">&#xE254;</span></a>
+              <a class="delete" title="Delete"><span class="material-icons">&#xE872;</span></a>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="custom-checkbox"><input type="checkbox" id="c4"><label for="c4"></label></span></td>
+            <td>Fran Wilson</td>
+            <td>franwilson@mail.com</td>
+            <td>C/ Araquil, 67, Madrid, Spain</td>
+            <td>(204) 619-5731</td>
+            <td>
+              <a class="edit btn-add" title="Edit"><span class="material-icons">&#xE254;</span></a>
+              <a class="delete" title="Delete"><span class="material-icons">&#xE872;</span></a>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="custom-checkbox"><input type="checkbox" id="c5"><label for="c5"></label></span></td>
+            <td>Martin Blank</td>
+            <td>martinblank@mail.com</td>
+            <td>Via Monte Bianco 34, Turin, Italy</td>
+            <td>(480) 631-2097</td>
+            <td>
+              <a class="edit btn-add" title="Edit"><span class="material-icons">&#xE254;</span></a>
+              <a class="delete" title="Delete"><span class="material-icons">&#xE872;</span></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="clearfix">
+        <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+        <ul class="pagination">
+          <li class="disabled"><a href="#">Previous</a></li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li class="active"><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#">Next</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Add Employee -->
+  <div id="addEmployeeModal" class="modal">
+    <div class="modal-content">
+      <form id="addForm">
+        <div class="modal-header">
+          <h4 class="modal-title">Add Employee</h4>
+          <span class="close modal-close">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" id="nameInput" class="form-control">
+            <div class="error-message text-danger"></div>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="text" id="emailInput" class="form-control">
+            <div class="error-message text-danger"></div>
+          </div>
+          <div class="form-group">
+            <label>Address</label>
+            <textarea id="addressInput" class="form-control"></textarea>
+            <div class="error-message text-danger"></div>
+          </div>
+          <div class="form-group">
+            <label>Phone</label>
+            <input type="text" id="phoneInput" class="form-control">
+            <div class="error-message text-danger"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-cancel">Cancel</button>
+          <button type="submit" class="btn btn-success">Add</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- jQuery + Script -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+  $(function(){
+    // Mở modal
+    $('.btn-add').click(function(){
+      $('#addEmployeeModal').fadeIn(200);
+      $('#addForm')[0].reset();
+      $('.error-message').text('');
+      $('#nameInput').focus();
+    });
+
+    // Đóng modal
+    $('.modal-close, .btn-cancel').click(function(){
+      $('#addEmployeeModal').fadeOut(200);
+    });
+    $(window).click(function(e){
+      if ($(e.target).is('#addEmployeeModal')) {
+        $('#addEmployeeModal').fadeOut(200);
+      }
+    });
+    $(document).keydown(function(e){
+      if (e.key === 'Escape') {
+        $('#addEmployeeModal').fadeOut(200);
+      }
+    });
+
+    // Validate & submit
+    $('#addForm').submit(function(e){
+      e.preventDefault();
+      let isValid = true;
+      $('.error-message').text('');
+
+      const name    = $('#nameInput').val().trim();
+      const email   = $('#emailInput').val().trim();
+      const address = $('#addressInput').val().trim();
+      const phone   = $('#phoneInput').val().trim();
+      const rePhone = /^0\d{9}$/;
+
+      if (!name) {
+        $('#nameInput').next('.error-message').text('⚠ Vui lòng nhập Name.');
+        isValid = false;
+      }
+      if (!email) {
+        $('#emailInput').next('.error-message').text('⚠ Vui lòng nhập Email.');
+        isValid = false;
+      }
+      if (!address) {
+        $('#addressInput').next('.error-message').text('⚠ Vui lòng nhập Address.');
+        isValid = false;
+      }
+      if (!phone) {
+        $('#phoneInput').next('.error-message').text('⚠ Vui lòng nhập Phone.');
+        isValid = false;
+      } else if (!rePhone.test(phone)) {
+        $('#phoneInput').next('.error-message').text('⚠ Phone phải đủ 10 số và bắt đầu bằng 0.');
+        isValid = false;
+      }
+
+      if (!isValid) return;
+      $('#addEmployeeModal').fadeOut(200);
+      // TODO: thêm logic chèn dữ liệu mới vào bảng
+    });
+  });
+  </script>
+</body>
+</html>

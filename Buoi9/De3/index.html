@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quản lý Nhân viên</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar cố định cao 60px -->
+  <nav class="navbar">
+    <div class="nav-left">Trường Đại học Thủy lợi</div>
+    <div class="nav-right">
+      <a href="#">Trang chủ</a>
+      <a href="#" class="non-active">Quản lý cửa hàng</a>
+      <input type="text" placeholder="Nhập nội dung tìm kiếm">
+      <button class="btn nav-search-btn">TÌM KIẾM</button>
+    </div>
+  </nav>
+
+  <!-- Nội dung chính: bảng -->
+  <main class="main-content">
+    <div class="table-container">
+      <!-- Thanh công cụ -->
+      <div class="table-actions">
+        <div class="left-actions">
+          <button class="btn btn-add">
+            <i class="fas fa-plus"></i> THÊM MỚI
+          </button>
+          <button class="btn btn-export">
+            <i class="fas fa-file-export"></i> XUẤT RA FILE <i class="fas fa-caret-down"></i>
+          </button>
+        </div>
+        <div class="center-actions">
+          <div class="search-wrapper">
+            <button class="btn btn-collapse"><i class="fas fa-angle-left"></i></button>
+            <input type="text" placeholder="Tìm kiếm theo Tên">
+            <button class="btn btn-search"><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+        <div class="right-actions">
+          <span class="result-label">Kết quả</span>
+          <select class="result-select">
+            <option>10</option>
+            <option selected>20</option>
+            <option>50</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Bảng dữ liệu -->
+      <div class="table-responsive">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Hành động <i class="fas fa-sort"></i></th>
+              <th>STT <i class="fas fa-sort"></i></th>
+              <th>Tên <i class="fas fa-sort"></i></th>
+              <th>Họ đệm <i class="fas fa-sort"></i></th>
+              <th>Địa chỉ <i class="fas fa-sort"></i></th>
+              <th>Hoạt động <i class="fas fa-sort"></i></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><button class="collapse-btn"><i class="fas fa-chevron-down"></i></button></td>
+              <td class="action-buttons">
+                <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                <button class="action-btn edit"><i class="fas fa-pencil-alt"></i></button>
+                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+              </td>
+              <td>1</td>
+              <td>Mai</td>
+              <td>Thục Anh</td>
+              <td>23 Hoàng Đạo Thúy, Thanh Xuân, Hà Nội</td>
+              <td class="status active"><i class="fas fa-check-circle"></i></td>
+            </tr>
+            <tr>
+              <td><button class="collapse-btn"><i class="fas fa-chevron-down"></i></button></td>
+              <td class="action-buttons">
+                <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                <button class="action-btn edit"><i class="fas fa-pencil-alt"></i></button>
+                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+              </td>
+              <td>2</td>
+              <td>Hoàng</td>
+              <td>Sinh Hồng</td>
+              <td>23 Hoàng Đạo Thúy, Thanh Xuân, Hà Nội</td>
+              <td class="status inactive"><i class="fas fa-times-circle"></i></td>
+            </tr>
+            <tr>
+              <td><button class="collapse-btn"><i class="fas fa-chevron-down"></i></button></td>
+              <td class="action-buttons">
+                <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                <button class="action-btn edit"><i class="fas fa-pencil-alt"></i></button>
+                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+              </td>
+              <td>3</td>
+              <td>Tính</td>
+              <td>Mai Trung</td>
+              <td>1411 Đường Láng, Cầu Giấy, Hà Nội</td>
+              <td class="status active"><i class="fas fa-check-circle"></i></td>
+            </tr>
+            <tr>
+              <td><button class="collapse-btn"><i class="fas fa-chevron-down"></i></button></td>
+              <td class="action-buttons">
+                <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                <button class="action-btn edit"><i class="fas fa-pencil-alt"></i></button>
+                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+              </td>
+              <td>4</td>
+              <td>Hồng</td>
+              <td>Nguyễn Văn</td>
+              <td>1411 Đường Láng, Cầu Giấy, Hà Nội</td>
+              <td class="status inactive"><i class="fas fa-times-circle"></i></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Chân bảng -->
+      <div class="table-footer">
+        Kết quả 1 đến 4
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer cố định cao 100px -->
+  <footer>
+    <div class="footer-content">
+      <h2>TRƯỜNG ĐẠI HỌC THỦY LỢI</h2>
+      <div class="contact-info">
+        <p>Địa chỉ: 175 Tây Sơn, Đống Đa, Hà Nội</p>
+        <p>Điện thoại: (024) 38522021 – Fax: (024) 35633351</p>
+        <p>Email: phonghch@tlu.edu.vn</p>
+      </div>
+    </div>
+  </footer>
+<!-- Modal Thêm Nhân viên -->
+<div id="addModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Thêm Nhân viên</h2>
+      <button class="modal-close">&times;</button>
+    </div>
+    <div class="modal-body">
+      <label for="input-ten">Tên</label>
+      <input id="input-ten" type="text" >
+      <div class="error-message"></div>
+
+      <label for="input-hodem">Họ đệm</label>
+      <input id="input-hodem" type="text" >
+      <div class="error-message"></div>
+
+      <label for="input-diachi">Địa chỉ</label>
+      <textarea id="input-diachi" rows="3"></textarea>
+      <div class="error-message"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel">Hủy</button>
+      <button class="btn-submit">Thêm</button>
+    </div>
+  </div>
+</div>
+
+
+</body>
+<!-- Nhúng jQuery trước khi dùng -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Nhúng jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+  // 1. Hiển thị form khi nhấn "THÊM MỚI"
+  $('.btn-add').on('click', function() {
+    $('#addModal').addClass('modal--active');
+    // Xóa thông báo lỗi và dữ liệu cũ
+    $('#addModal .error-message').text('');
+    $('#addModal input, #addModal textarea').val('');
+    $('#input-ten').focus();
+  });
+  // 2. Đóng form khi nhấn close hoặc "Hủy"
+  $('.modal-close, .btn-cancel').on('click', function() {
+    $('#addModal').removeClass('modal--active');
+  });
+  // 3. Validate khi nhấn "Thêm"
+  $('.btn-submit').on('click', function(e) {
+    e.preventDefault();
+    let isValid = true;
+    // Xóa lỗi cũ
+    $('#addModal .error-message').text('');
+    // Lấy dữ liệu nhập
+    let ten = $('#input-ten').val().trim();
+    let hodem = $('#input-hodem').val().trim();
+    let diachi = $('#input-diachi').val().trim();
+
+    // Kiểm tra Tên
+    if (!ten) {
+      $('#input-ten').next('.error-message').text('Vui lòng nhập Tên.');
+      isValid = false;
+    } else if (ten.length > 15) {
+      $('#input-ten').next('.error-message').text('Tên không được quá 15 ký tự.');
+      isValid = false;
+    }
+
+    // Kiểm tra Họ đệm
+    if (!hodem) {
+      $('#input-hodem').next('.error-message').text('Vui lòng nhập Họ đệm.');
+      isValid = false;
+    } else if (hodem.length > 20) {
+      $('#input-hodem').next('.error-message').text('Họ đệm không được quá 20 ký tự.');
+      isValid = false;
+    }
+
+    // Kiểm tra Địa chỉ
+    if (!diachi) {
+      $('#input-diachi').next('.error-message').text('Vui lòng nhập Địa chỉ.');
+      isValid = false;
+    } else if (diachi.length > 50) {
+      $('#input-diachi').next('.error-message').text('Địa chỉ không được quá 50 ký tự.');
+      isValid = false;
+    }
+
+    if (!isValid) return; // Nếu có lỗi, không thực hiện tiếp
+
+    alert('Thêm thành công!');
+    $('#addModal').removeClass('modal--active');
+  });
+
+  // 4. Nhấn ESC đóng modal
+  $(document).on('keydown', function(e){
+    if (e.key === "Escape") $('#addModal').removeClass('modal--active');
+  });
+});
+</script>
+
+</html>

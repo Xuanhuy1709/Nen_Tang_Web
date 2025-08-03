@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quản lý Nhân viên</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">Trường Đại học Thủy lợi</div>
+    <div class="nav-right">
+      <a href="#">Trang chủ</a>
+      <a href="#" class="non-active">Quản lý cửa hàng</a>
+      <input type="text" placeholder="Nhập nội dung tìm kiếm">
+      <button class="btn nav-search-btn">TÌM KIẾM</button>
+    </div>
+  </nav>
+
+  <!-- Nội dung chính -->
+  <main class="main-content">
+    <div class="table-container">
+      <!-- Thanh công cụ -->
+      <div class="table-actions">
+        <div class="left-actions">
+          <button class="btn btn-add"><i class="fas fa-plus"></i> THÊM</button>
+          <button class="btn btn-export">
+            <i class="fas fa-file-export"></i> XUẤT RA FILE <i class="fas fa-caret-down"></i>
+          </button>
+        </div>
+        <div class="center-actions">
+          <div class="search-wrapper">
+            <button class="btn btn-collapse"><i class="fas fa-angle-left"></i></button>
+            <input type="text" placeholder="Tìm kiếm giao dịch">
+            <button class="btn btn-search"><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+        <div class="right-actions">
+          <span class="result-label">kết quả</span>
+          <select class="result-select">
+            <option>5</option>
+            <option selected>10</option>
+            <option>15</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Bảng dữ liệu -->
+      <div class="table-responsive">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Hành động <i class="fas fa-sort"></i></th>
+              <th>ID <i class="fas fa-sort"></i></th>
+              <th>Khách hàng <i class="fas fa-sort"></i></th>
+              <th>Nhân viên <i class="fas fa-sort"></i></th>
+              <th>Số tiền <i class="fas fa-sort"></i></th>
+              <th>Ngày mua <i class="fas fa-sort"></i></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="delete-row">
+                <button class="btn-delete-row">&times;</button>
+              </td>
+              <td class="action-buttons">
+                <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                <button class="action-btn edit"><i class="fas fa-pencil-alt"></i></button>
+                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+              </td>
+              <td>1102</td>
+              <td>Võ Hoài An</td>
+              <td>Mai Thục Anh</td>
+              <td>250 000</td>
+              <td>06 Tháng 6 2024 9:00</td>
+            </tr>
+            <tr>
+              <td class="delete-row">
+                <button class="btn-delete-row">&times;</button>
+              </td>
+              <td class="action-buttons">
+                <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                <button class="action-btn edit"><i class="fas fa-pencil-alt"></i></button>
+                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+              </td>
+              <td>1199</td>
+              <td>Hoàng Thị Thắng</td>
+              <td>Nguyễn Văn Hồng</td>
+              <td>600 000</td>
+              <td>06 Tháng 6 2024 9:03</td>
+            </tr>
+            <tr>
+              <td class="delete-row">
+                <button class="btn-delete-row">&times;</button>
+              </td>
+              <td class="action-buttons">
+                <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                <button class="action-btn edit"><i class="fas fa-pencil-alt"></i></button>
+                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+              </td>
+              <td>1239</td>
+              <td>Nguyễn Huy Quang</td>
+              <td>Nguyễn Văn Hồng</td>
+              <td>934 000</td>
+              <td>06 Tháng 6 2024 9:10</td>
+            </tr>
+            <tr>
+              <td class="delete-row">
+                <button class="btn-delete-row">&times;</button>
+              </td>
+              <td class="action-buttons">
+                <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                <button class="action-btn edit"><i class="fas fa-pencil-alt"></i></button>
+                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+              </td>
+              <td>1677</td>
+              <td>Huỳnh Văn Nam</td>
+              <td>Mai Thục Anh</td>
+              <td>150 000</td>
+              <td>06 Tháng 6 2024 9:20</td>
+            </tr>
+            <tr>
+              <td class="delete-row">
+                <button class="btn-delete-row">&times;</button>
+              </td>
+              <td class="action-buttons">
+                <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                <button class="action-btn edit"><i class="fas fa-pencil-alt"></i></button>
+                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+              </td>
+              <td>1439</td>
+              <td>Nguyễn Hồng Minh</td>
+              <td>Mai Thục Anh</td>
+              <td>354 000</td>
+              <td>06 Tháng 6 2024 9:24</td>
+            </tr>
+
+            <!-- DELETE SELECTED RECORDS -->
+            <tr class="delete-selected-row">
+              <td colspan="7">
+                <button class="btn btn-delete-selected">
+                  <i class="fas fa-trash"></i> DELETE SELECTED RECORDS
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Phân trang & Kết quả -->
+      <div class="table-footer">
+        <div class="pagination-container">
+          <span class="pagination-label">Trang</span>
+          <ul class="pagination">
+            <li><button class="btn-page active">1</button></li>
+            <li><button class="btn-page">2</button></li>
+            <li><button class="btn-page">3</button></li>
+            <li><button class="btn-page">4</button></li>
+            <li><button class="btn-page">5</button></li>
+            <li><button class="btn-page">6</button></li>
+            <li><button class="btn-page btn-next"><i class="fas fa-angle-right"></i></button></li>
+            <li><button class="btn-page btn-next"><i class="fas fa-angle-double-right"></i></button></li>
+          </ul>
+        </div>
+        <div class="pagination-result">
+          Kết quả 1 trong 20 trang
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <h2>TRƯỜNG ĐẠI HỌC THỦY LỢI</h2>
+      <div class="contact-info">
+        <p>Địa chỉ: 175 Tây Sơn, Đống Đa, Hà Nội</p>
+        <p>Điện thoại: (024) 38522021 – Fax: (024) 35633351</p>
+        <p>Email: phonghch@tlu.edu.vn</p>
+      </div>
+    </div>
+  </footer>
+
+<!-- Modal Thêm Nhân viên -->
+<div id="addModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Thêm giao dịch</h2>
+      <button class="modal-close">&times;</button>
+    </div>
+    <div class="modal-body">
+      <label for="input-khachhang">Khách hàng</label>
+      <input id="input-khachhang" type="text" maxlength="40">
+      <div class="error-message"></div>
+
+      <label for="input-nhanvien">Nhân viên</label>
+      <input id="input-nhanvien" type="text" maxlength="40">
+      <div class="error-message"></div>
+
+      <label for="input-sotien">Số tiền</label>
+      <input id="input-sotien" type="text" >
+      <div class="error-message"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel">Hủy</button>
+      <button class="btn-submit">Thêm</button>
+    </div>
+  </div>
+</div>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+  // Mở modal khi bấm "Thêm"
+  $('.btn-add').on('click', function(){
+    $('#addModal').addClass('modal--active');
+    $('#addModal .error-message').text('');
+    $('#addModal input').val('').first().focus();
+  });
+
+  // Đóng modal khi bấm "Đóng" hoặc "Hủy"
+  $('.modal-close, .btn-cancel').on('click', function(){
+    $('#addModal').removeClass('modal--active');
+  });
+
+  // Validate khi nhấn "Thêm"
+  $('.btn-submit').on('click', function(e){
+    e.preventDefault();
+    let isValid = true;
+
+    // Xóa thông báo lỗi cũ
+    $('#addModal .error-message').text('');
+
+    // Lấy giá trị các ô input
+    const khachhang = $('#input-khachhang').val().trim();
+    const nhanvien  = $('#input-nhanvien').val().trim();
+    const sotien    = $('#input-sotien').val().trim();
+
+    // Kiểm tra Khách hàng
+    if (!khachhang) {
+      $('#input-khachhang').next('.error-message')
+        .text('Vui lòng nhập tên Khách hàng.');
+      isValid = false;
+    } else if (khachhang.length > 30) {
+      $('#input-khachhang').next('.error-message')
+        .text('Tên Khách hàng không được quá 30 ký tự.');
+      isValid = false;
+    }
+
+    // Kiểm tra Nhân viên
+    if (!nhanvien) {
+      $('#input-nhanvien').next('.error-message')
+        .text('Vui lòng nhập tên Nhân viên.');
+      isValid = false;
+    } else if (nhanvien.length > 30) {
+      $('#input-nhanvien').next('.error-message')
+        .text('Tên Nhân viên không được quá 30 ký tự.');
+      isValid = false;
+    }
+
+    // Kiểm tra Số tiền
+    if (!sotien) {
+      $('#input-sotien').next('.error-message')
+        .text('Vui lòng nhập Số tiền.');
+      isValid = false;
+    }
+
+    // Nếu có lỗi thì không gửi form
+    if (!isValid) return;
+
+    // Nếu hợp lệ
+    alert('Thêm thành công!');
+    $('#addModal').removeClass('modal--active');
+    // TODO: Thêm dòng vào bảng nếu cần
+  });
+
+  // Đóng modal khi bấm ESC
+  $(document).on('keydown', function(e){
+    if (e.key === 'Escape') {
+      $('#addModal').removeClass('modal--active');
+    }
+  });
+});
+</script>
+
+
+</html>
