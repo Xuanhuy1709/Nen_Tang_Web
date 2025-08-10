@@ -8,6 +8,14 @@ export default function StudentTable() {
     setStudents(stored);
   }, []); 
 
+  const handleDelete = (id) => {
+    if (window.confirm('Xác nhận xóa sinh viên này?')) {
+      const updated = students.filter(s => s.id !== id);
+      localStorage.setItem('students', JSON.stringify(updated));
+      setStudents(updated);
+    }
+  };
+
   return (
     <table>
       <thead>
@@ -31,8 +39,13 @@ export default function StudentTable() {
             <td>{s.gioiTinh}</td>
             <td>{s.ngaySinh}</td>
             <td className="actions">
-              <a href="#" onClick={e => e.preventDefault()}>Sửa</a> |{' '}
-              <a href="#" onClick={e => e.preventDefault()}>Xoá</a>
+              <a href="#" onClick={(e) => e.preventDefault()}>Sửa</a> |{' '}
+              <a
+                href="#"
+                onClick={(e) => { e.preventDefault(); handleDelete(s.id); }}
+              >
+                Xoá
+              </a>
             </td>
           </tr>
         ))}
