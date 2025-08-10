@@ -56,7 +56,7 @@ export default function StudentForm() {
     };
     list.push(newStudent);
     localStorage.setItem('students', JSON.stringify(list));
-
+    window.location.reload();
   };
 
   return (
